@@ -1,10 +1,13 @@
 FROM alpine:3.7
 MAINTAINER James Laverack <james@jameslaverack.com>
 
+# Asciidoctor packages
+RUN apk update && \
+    apk add asciidoctor
+
 # Download
 ARG valeVersion=0.11.0
-RUN apk update && \
-    apk add wget ca-certificates && \
+RUN apk add wget ca-certificates && \
     wget -O vale.tgz https://github.com/ValeLint/vale/releases/download/v${valeVersion}/vale_${valeVersion}_Linux_64-bit.tar.gz
 
 # Check
