@@ -1,9 +1,9 @@
 FROM alpine:3.7
 MAINTAINER James Laverack <james@jameslaverack.com>
 
-# Asciidoctor packages
+# Asciidoctor & Make packages
 RUN apk update && \
-    apk add asciidoctor
+    apk add asciidoctor make
 
 # Download
 ARG valeVersion=0.11.0
